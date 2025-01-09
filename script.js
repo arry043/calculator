@@ -27,6 +27,18 @@ function calculate() {
             return;
         }
 
+        if (display.value[display.value.length - 1] === '.') {
+            display.value = display.value.slice(0, -1);
+        }  
+        
+        if (display.value === 'Error') {
+            return;
+        }
+        
+        if (display.value[0] === '0' && display.value[1] !== '.' && display.value.length > 1) {
+            display.value = display.value.slice(1);
+        }
+
         if (display.value[display.value.length - 1] === '+' || display.value[display.value.length - 1] === '-' || display.value[display.value.length - 1] === '×' || display.value[display.value.length - 1] === '÷' || display.value[display.value.length - 1] === '%' || display.value[display.value.length - 1] === '^') {
             display.value = display.value.slice(0, -1);
         }
