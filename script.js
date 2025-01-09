@@ -2,6 +2,10 @@ const display = document.getElementById('display');
 
 function appendToDisplay(input) {
 
+    if (display.value === 'Error') {
+        display.value = '';
+    }
+    
     if (input === '+' || input === '-' || input === '×' || input === '÷' || input === '%' || input === '^') {
         if ( input === '+' || input === '-' || input === '×' || input === '÷' || input === '%' || input === '^') { 
             if (display.value[display.value.length - 1] === '+' || display.value[display.value.length - 1] === '-' || display.value[display.value.length - 1] === '×' || display.value[display.value.length - 1] === '÷' || display.value[display.value.length - 1] === '%' || display.value[display.value.length - 1] === '^') {
