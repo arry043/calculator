@@ -1,6 +1,14 @@
 const display = document.getElementById('display');
 
 function appendToDisplay(input) {
+
+    if (input === '+' || input === '-' || input === '×' || input === '÷' || input === '%' || input === '^') {
+        if ( input === '+' || input === '-' || input === '×' || input === '÷' || input === '%' || input === '^') { 
+            if (display.value[display.value.length - 1] === '+' || display.value[display.value.length - 1] === '-' || display.value[display.value.length - 1] === '×' || display.value[display.value.length - 1] === '÷' || display.value[display.value.length - 1] === '%' || display.value[display.value.length - 1] === '^') {
+                display.value = display.value.slice(0, -1);
+            }
+        }
+    } 
     display.value += input;
 }
 
@@ -17,6 +25,10 @@ function calculate() {
     try {
         if (display.value === '') {
             return;
+        }
+
+        if (display.value[display.value.length - 1] === '+' || display.value[display.value.length - 1] === '-' || display.value[display.value.length - 1] === '×' || display.value[display.value.length - 1] === '÷' || display.value[display.value.length - 1] === '%' || display.value[display.value.length - 1] === '^') {
+            display.value = display.value.slice(0, -1);
         }
 
         if (display.value.includes('÷')) {
